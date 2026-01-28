@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Royal Chai Color Palette */
+    --background: 35 30% 96%;
+    --foreground: 25 40% 12%;
+
+    --card: 35 25% 94%;
+    --card-foreground: 25 40% 12%;
+
+    --popover: 35 25% 94%;
+    --popover-foreground: 25 40% 12%;
+
+    /* Rich Mahogany Brown */
+    --primary: 25 65% 18%;
+    --primary-foreground: 40 30% 95%;
+
+    /* Warm Cream */
+    --secondary: 38 35% 90%;
+    --secondary-foreground: 25 40% 15%;
+
+    --muted: 35 20% 88%;
+    --muted-foreground: 25 25% 40%;
+
+    /* Burnished Gold */
+    --accent: 38 75% 55%;
+    --accent-foreground: 25 65% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 25% 82%;
+    --input: 35 25% 85%;
+    --ring: 38 75% 55%;
+
+    --radius: 0.5rem;
+
+    /* Custom brand colors */
+    --gold: 38 75% 55%;
+    --gold-light: 40 70% 70%;
+    --gold-dark: 35 80% 40%;
+    --mahogany: 25 65% 18%;
+    --mahogany-light: 25 45% 28%;
+    --cream: 38 35% 92%;
+    --cream-dark: 35 30% 85%;
+    --spice: 18 70% 35%;
+    --chai: 28 50% 25%;
+
+    /* Gradients */
+    --gradient-royal: linear-gradient(135deg, hsl(25 65% 18%) 0%, #b87414 100%);
+    --gradient-gold: linear-gradient(135deg, #e2a336 0%, hsl(40 70% 70%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(35 30% 96%) 0%, hsl(38 35% 90%) 100%);
+
+    /* Shadows */
+    --shadow-gold: 0 4px 20px -4px hsl(38 75% 55% / 0.3);
+    --shadow-royal: 0 8px 32px -8px hsl(25 65% 18% / 0.25);
+    --shadow-soft: 0 2px 12px -2px hsl(25 40% 12% / 0.1);
+
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-elegant: 'Cormorant Garamond', Georgia, serif;
+    --font-body: system-ui, -apple-system, sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 40% 8%;
+    --foreground: 38 30% 92%;
+
+    --card: 25 35% 12%;
+    --card-foreground: 38 30% 92%;
+
+    --popover: 25 35% 12%;
+    --popover-foreground: 38 30% 92%;
+
+    --primary: 38 75% 55%;
+    --primary-foreground: 25 65% 12%;
+
+    --secondary: 25 30% 18%;
+    --secondary-foreground: 38 30% 90%;
+
+    --muted: 25 25% 20%;
+    --muted-foreground: 35 20% 60%;
+
+    --accent: 38 75% 55%;
+    --accent-foreground: 25 65% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 25% 22%;
+    --input: 25 25% 22%;
+    --ring: 38 75% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-elegant {
+    font-family: var(--font-elegant);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-light)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-royal {
+    background: var(--gradient-royal);
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-royal {
+    box-shadow: var(--shadow-royal);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Royal pattern overlay */
+  .pattern-royal {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4a052' fill-opacity='0.08'%3E%3Cpath d='M30 30c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Shimmer animation for gold elements */
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--gold)) 0%,
+      hsl(var(--gold-light)) 25%,
+      hsl(var(--gold)) 50%,
+      hsl(var(--gold-light)) 75%,
+      hsl(var(--gold)) 100%
+    );
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Steam animation */
+  @keyframes steam {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateY(-20px) scale(1.2);
+      opacity: 0;
+    }
+  }
+
+  .animate-steam {
+    animation: steam 2s ease-in-out infinite;
+  }
+
+  /* Fade in up animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+}
