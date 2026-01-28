@@ -7,7 +7,7 @@ interface LogoProps {
 const Logo = ({ className }: LogoProps) => {
   return (
     <div className={cn("flex flex-col items-center", className)}>
-      <img src="/public/logo.svg"></img>
+      <img src="/logo.svg"></img>
       
       {/* Brand Name */}
       <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide text-primary">
